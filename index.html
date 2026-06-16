@@ -3,424 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>+150 Exercícios de Basquete em Vídeo | Pacote Completo</title>
-  <meta name="description" content="Acesso imediato a +150 exercícios de basquete em vídeo com metodologias validadas. Bônus exclusivos para treinadores e formadores.">
+  <title>Área de Membros | +150 Exercícios de Basquete em Vídeo</title>
   
-  <!-- Preconnect to Google Fonts and load stylesheet asynchronously -->
+  <!-- Preconnect to Google Fonts and load stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-
-  <!-- Preload the critical above-the-fold hero image responsively -->
-  <link rel="preload" as="image" href="images/hero_mobile.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" href="images/hero_desktop.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
-
-  <!-- OG tags for social sharing -->
-  <meta property="og:title" content="+150 Exercícios de Basquete em Vídeo | Pacote Completo" />
-  <meta property="og:description" content="Acelere os treinos de seu time com mais de 150 dinâmicas de basquete prontas e validadas." />
-  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/members.css">
 </head>
 <body>
 
-  <!-- Top Promo Banner -->
-  <div class="promo-banner-top">
-    <span>🔥 Oferta limitada apenas hoje: <strong id="promo-date"></strong></span>
-  </div>
-
-  <!-- Hero Section -->
-  <header class="hero-section">
-    <div class="hero-badge">⚡ Biblioteca Digital Completa</div>
-    <h1>+150 Exercícios de <span>Basquete em Vídeo</span></h1>
-    
-    <!-- Centered Mockup Image -->
-    <div class="hero-image-container">
-      <picture>
-        <source media="(max-width: 768px)" srcset="images/hero_mobile.webp" type="image/webp">
-        <source media="(min-width: 769px)" srcset="images/hero_desktop.webp" type="image/webp">
-        <img src="images/hero.jpg" alt="150 Treinos de Basquete Mockups" class="hero-stacked-img" width="700" height="400" loading="eager" fetchpriority="high">
-      </picture>
-    </div>
-    
-    <p class="hero-subheadline">
-      Chega de repetir os mesmos treinos: encontre rapidamente exercícios de basquete para montar aulas mais práticas, variadas e envolventes para seus alunos.
-    </p>
-    
-    <div class="cta-container">
-      <a href="#preco" class="btn-hero-cta">QUERO ACESSAR AGORA</a>
-      <div class="hero-security-badges">
-        <span>🔒 Compra 100% Segura</span>
-        <span>🛡️ Garantia de 7 Dias</span>
-        <span>⚡ Acesso Imediato</span>
+  <!-- Top Dashboard Header -->
+  <header class="members-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        🏀 Basketball<span>Pro</span>
+      </a>
+      
+      <!-- Real-time Progress Tracking -->
+      <div class="progress-section">
+        <div class="progress-text" id="progress-text">
+          Progresso do Treino: <span>0 de 150</span> (0%)
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Features section representing 'Para Todas as Equipes' -->
-  <section id="recursos" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-color);">
-    <div class="section-wrapper">
-      <div class="section-header">
-        <h2>Para Todas as <span>Equipes</span></h2>
-        <p>Dinâmicas adaptáveis para categorias infantis, juvenis e adultas. Ideal para treinadores, preparadores físicos e escolinhas de basquete.</p>
-      </div>
+  <!-- Main Grid App Layout -->
+  <main class="members-main">
+    
+    <!-- Sidebar: 6 Basketball Training Categories -->
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Generated Dynamically by JS -->
+    </nav>
+    
+    <!-- Main Content Area: Video Player & List of active exercises -->
+    <div class="content-area">
       
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon-wrapper">✓</div>
-          <h3>Para Diferentes Idades</h3>
-          <p>Dinâmicas e exercícios adaptáveis para diferentes idades e níveis de jogo de forma simples.</p>
+      <!-- Video Detail Panel -->
+      <div class="video-section">
+        <div class="video-container">
+          <!-- Video Mockup Placeholder with play button -->
+          <div class="video-placeholder" id="video-placeholder" onclick="playVideo()">
+            <div class="play-btn-overlay">
+              <svg viewBox="0 0 24 24" width="32" height="32">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          <video id="video-player" controls autoplay style="width: 100%; height: 100%; display: none; border: none; background: #000;"></video>
+          <iframe id="video-iframe" style="width: 100%; height: 100%; display: none; border: none; background: #000;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem;">
+          <a id="external-video-link" href="#" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.25rem;">
+            Se o vídeo não carregar localmente, clique aqui para assistir no YouTube ↗
+          </a>
         </div>
         
-        <div class="feature-item">
-          <div class="feature-icon-wrapper">✓</div>
-          <h3>Validação de Quadra</h3>
-          <p>Material testado e aprovado em clubes e escolinhas de basquete profissionais.</p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon-wrapper">✓</div>
-          <h3>Desenvolvimento Real</h3>
-          <p>Dinâmicas focadas no desenvolvimento real das habilidades físicas e táticas do seu time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories section representing 'Mais de 150 Vídeos divididos em 6 categorias' -->
-  <section id="categorias" class="categories-section">
-    <div class="section-wrapper">
-      <div class="section-header">
-        <h2>Mais de 150 Vídeos divididos em <span>6 Categorias</span></h2>
-        <p>Acesse rapidamente os exercícios que precisa para estruturar seu treino diário.</p>
-      </div>
-      
-      <div class="categories-grid">
-        <div class="category-pill">🏀 Exercícios de Arremesso</div>
-        <div class="category-pill">🏃‍♂️ Resistência e Físico</div>
-        <div class="category-pill">🏀 Exercícios de Passe</div>
-        <div class="category-pill">👟 Drible e Controle de Bola</div>
-        <div class="category-pill">⚡ Velocidade e Agilidade</div>
-        <div class="category-pill">🛡️ Sistemas de Defesa</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bonuses section representing 'BÔNUS' -->
-  <section id="bonuses" class="section-wrapper">
-    <div class="section-header">
-      <h2>Bônus Exclusivos inclusos <span>Hoje</span></h2>
-      <p>Ganhe estes materiais de apoio adicionais gratuitamente ao se inscrever agora.</p>
-    </div>
-    
-    <div class="bonus-grid">
-      <div class="bonus-box">
-        <span class="bonus-tag">Grátis</span>
-        <h3>BÔNUS: Exercícios de Técnica Individual</h3>
-        <p>Rotinas focadas na melhoria de drible, arremessos especiais e fintas de corpo isoladas para seus atletas praticarem.</p>
-      </div>
-      
-      <div class="bonus-box">
-        <span class="bonus-tag">Grátis</span>
-        <h3>BÔNUS: Guia Completo de Treinamento Tático</h3>
-        <p>Livro digital explicativo ilustrando as principais jogadas ensaiadas e sistemas defensivos e ofensivos.</p>
-      </div>
-
-      <div class="bonus-box">
-        <span class="bonus-tag">Grátis</span>
-        <h3>BÔNUS: Pacote de Circuitos Físicos</h3>
-        <p>Circuitos detalhados em estações focando na impulsão, velocidade de arrancada e estabilização articular.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); overflow: hidden;">
-    <div class="section-wrapper" style="padding-bottom: 4rem;">
-      <div class="section-header">
-        <h2>Depoimentos de <span>Treinadores e Pais</span></h2>
-        <p>Arraste para o lado para ver o feedback de quem já utiliza o material</p>
-      </div>
-      
-      <!-- Horizontal Scrollable Container -->
-      <div class="testimonials-scroll-container">
-        <div class="testimonial-img-card">
-          <img src="images/depo1.png" alt="Depoimento de Professor Rafael">
-        </div>
-        <div class="testimonial-img-card">
-          <img src="images/depo2.png" alt="Depoimento de Marcos">
-        </div>
-        <div class="testimonial-img-card">
-          <img src="images/depo3.png" alt="Depoimento de Lucas">
-        </div>
-        <div class="testimonial-img-card">
-          <img src="images/depo4.png" alt="Depoimento de Professora Camila">
-        </div>
-      </div>
-      
-      <!-- Visual indicator/dots for scroll instruction -->
-      <div class="scroll-indicator-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing section -->
-  <section class="pricing-wrapper">
-    <div class="section-wrapper" style="padding-top: 0; padding-bottom: 2rem;">
-      <div class="section-header">
-        <h2>Escolha o seu <span>Plano</span></h2>
-        <p>Compre uma única vez e tenha acesso para sempre, incluindo atualizações grátis.</p>
-      </div>
-
-      <div id="preco" class="pricing-grid">
-        <!-- Plano Básico -->
-        <div class="pricing-card">
-          <h3 class="plan-title">Plano Básico</h3>
-          <div class="price-box">
-            <h4>R$ 15<span>,90</span></h4>
+        <div class="video-info">
+          <div class="video-title-wrap">
+            <h2 class="video-title" id="video-title">Carregando Treino...</h2>
+            <div class="video-meta-tags">
+              <span class="meta-tag difficulty" id="video-difficulty">Iniciante</span>
+              <span class="meta-tag" id="video-duration">0 min</span>
+            </div>
           </div>
           
-          <div class="plan-features">
-            <div class="plan-feature-item">
-              <span class="plan-feature-check">✓</span>
-              <span>Acesso vitalício à plataforma</span>
-            </div>
-            <div class="plan-feature-item">
-              <span class="plan-feature-check">✓</span>
-              <span>+150 Exercícios de Basquete</span>
-            </div>
-            <div class="plan-feature-item">
-              <span class="plan-feature-check">✓</span>
-              <span>Download de todos os vídeos</span>
-            </div>
-            <div class="plan-feature-item whatsapp">
-              <span class="plan-feature-check whatsapp">✓</span>
-              <span>Envio imediato pelo WhatsApp</span>
-            </div>
-          </div>
-
-          <a href="members.html" class="btn-primary" style="display: block; width: 100%; text-align: center; margin-top: auto;">
-            Quero o Plano Básico
-          </a>
-          <div class="security-badges-container">
-            <div class="badge-item">🔒 Compra 100% Segura</div>
-            <div class="badge-item">🛡️ Garantia de 7 Dias</div>
-            <div class="badge-item">⚡ Acesso Vitalício Imediato</div>
-          </div>
-        </div>
-
-        <!-- Plano Premium (Destacado) -->
-        <div class="pricing-card premium">
-          <span class="pricing-badge">Mais Comprado</span>
-          <h3 class="plan-title">Plano Premium</h3>
-          <div class="price-box">
-            <span class="price-original">de R$ 49,90</span>
-            <h4>R$ 24<span>,90</span></h4>
+          <p class="video-desc" id="video-desc">Selecione um treino na lista lateral para iniciar.</p>
+          
+          <div class="instruction-steps">
+            <h4>📋 Passo a Passo Tático</h4>
+            <ol id="instruction-list">
+              <!-- Generated Dynamically by JS -->
+            </ol>
           </div>
           
-          <div class="plan-features">
-            <div class="plan-feature-item">
-              <span class="plan-feature-check">✓</span>
-              <span>Acesso vitalício à plataforma</span>
-            </div>
-            <div class="plan-feature-item">
-              <span class="plan-feature-check">✓</span>
-              <span>+150 Exercícios de Basquete</span>
-            </div>
-            <div class="plan-feature-item bonus">
-              <span class="plan-feature-check">✓</span>
-              <span><span class="bonus-label">BÔNUS</span> Exercícios de técnica individual</span>
-            </div>
-            <div class="plan-feature-item bonus">
-              <span class="plan-feature-check">✓</span>
-              <span><span class="bonus-label">BÔNUS</span> Guia de Treinamento Tático</span>
-            </div>
-            <div class="plan-feature-item bonus">
-              <span class="plan-feature-check">✓</span>
-              <span><span class="bonus-label">BÔNUS</span> Pacote de Circuitos Físicos</span>
-            </div>
-            <div class="plan-feature-item">
-              <span class="plan-feature-check">✓</span>
-              <span>Download de todos os vídeos</span>
-            </div>
-            <div class="plan-feature-item whatsapp">
-              <span class="plan-feature-check whatsapp">✓</span>
-              <span>Envio imediato pelo WhatsApp</span>
-            </div>
-          </div>
-
-          <a href="members.html" class="btn-primary" style="display: block; width: 100%; text-align: center; margin-top: auto;">
-            Quero o Plano Premium
-          </a>
-          <div class="security-badges-container">
-            <div class="badge-item">🔒 Compra 100% Segura</div>
-            <div class="badge-item">🛡️ Garantia de 7 Dias</div>
-            <div class="badge-item">⚡ Acesso Vitalício Imediato</div>
-          </div>
+          <!-- Complete Button -->
+          <button class="video-complete-btn" id="complete-btn" onclick="toggleComplete()">
+            Marcar como Concluído
+          </button>
         </div>
       </div>
-
-      <!-- 7 Day Guarantee Block -->
-      <div class="guarantee-block">
-        <div class="guarantee-seal">🛡️</div>
-        <div class="guarantee-text">
-          <h3>Garantia Incondicional de 7 Dias</h3>
-          <p>Experimente o material por 7 dias. Se você não gostar do conteúdo ou achar que não serve para o seu time, basta enviar um e-mail ou mensagem no suporte e <strong>devolvemos 100% do seu dinheiro</strong>. Sem perguntas ou burocracia.</p>
+      
+      <!-- Playlist Sidebar Panel -->
+      <section class="playlist-section">
+        <div class="playlist-header">
+          <h3>Lista de Exercícios</h3>
+          <p>Selecione o treino para assistir ao vídeo explicativo</p>
         </div>
-      </div>
+        <div class="exercise-list" id="exercise-list">
+          <!-- Generated Dynamically by JS -->
+        </div>
+      </section>
+      
     </div>
-  </section>
-
-  <!-- FAQ Section representing 'Garantia de 7 dias e perguntas' -->
-  <section id="faq" class="section-wrapper" style="border-top: 1px solid var(--border-color);">
-    <div class="section-header">
-      <h2>Perguntas <span>Frequentes</span></h2>
-    </div>
-
-    <div class="faq-container">
-      <div class="faq-card">
-        <div class="faq-title">Como funciona a entrega do material? <span>+</span></div>
-        <div class="faq-desc">Imediatamente após a confirmação do seu pagamento, você receberá um e-mail com as instruções de acesso à plataforma onde encontrará todo o material disponível para download e uso.</div>
-      </div>
-
-      <div class="faq-card">
-        <div class="faq-title">Quais formas de pagamento vocês aceitam? <span>+</span></div>
-        <div class="faq-desc">Aceitamos cartões de crédito, débito, PayPal, Pix e transferências bancárias. O pagamento é processado de forma segura através da nossa plataforma certificada.</div>
-      </div>
-
-      <div class="faq-card">
-        <div class="faq-title">As dinâmicas são validadas para o basquete? <span>+</span></div>
-        <div class="faq-desc">Sim, todas as dinâmicas foram testadas e validadas por treinadores profissionais em clubes e escolinhas de basquete de diferentes países.</div>
-      </div>
-
-      <div class="faq-card">
-        <div class="faq-title">Como funciona a garantia de 7 dias? <span>+</span></div>
-        <div class="faq-desc">Se por qualquer motivo você não ficar satisfeito com o material, basta entrar em contato conosco dentro dos primeiros 7 dias e devolveremos 100% do seu dinheiro, sem perguntas.</div>
-      </div>
-
-      <div class="faq-card">
-        <div class="faq-title">As dinâmicas servem para quais categorias? <span>+</span></div>
-        <div class="faq-desc">As dinâmicas são adaptadas para todas as categorias: infantil, juvenil e adulta. Cada exercício inclui variações para ajustar a dificuldade conforme o nível dos jogadores.</div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer-wrap">
-    <p>&copy; 2026 BasketballPro. Todos os direitos reservados. Plataforma de treinamento interativa.</p>
+  <footer class="members-footer">
+    <p>&copy; 2026 BasketballPro. Todos os direitos reservados. Painel de Acesso Exclusivo de Alunos.</p>
   </footer>
 
-  <!-- FAQ Accordion and Countdown Timer script -->
-  <script>
-    // FAQ Accordion
-    document.querySelectorAll('.faq-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const isActive = card.classList.contains('active');
-        document.querySelectorAll('.faq-card').forEach(c => {
-          c.classList.remove('active');
-          c.querySelector('.faq-title span').textContent = '+';
-        });
-        
-        if (!isActive) {
-          card.classList.add('active');
-          card.querySelector('.faq-title span').textContent = '−';
-        }
-      });
-    });
-
-    // Set dynamic date in promo banner
-    const dateElement = document.getElementById('promo-date');
-    if (dateElement) {
-      const options = { day: 'numeric', month: 'long' };
-      const today = new Date().toLocaleDateString('pt-BR', options);
-      dateElement.textContent = today;
-    }
-
-    // Social Proof Notifications Loop
-    const firstNames = ['Carlos', 'Ana', 'Ricardo', 'Mariana', 'Lucas', 'Juliana', 'Felipe', 'Gabriela', 'Rodrigo', 'Camila', 'Gustavo', 'Fernanda', 'Diego', 'Beatriz', 'Marcelo', 'Vanessa', 'Thiago', 'Aline', 'Bruno', 'Letícia'];
-    const cities = ['São Paulo/SP', 'Rio de Janeiro/RJ', 'Belo Horizonte/MG', 'Curitiba/PR', 'Porto Alegre/RS', 'Salvador/BA', 'Recife/PE', 'Fortaleza/CE', 'Brasília/DF', 'Florianópolis/SC', 'Goiânia/GO', 'Campinas/SP', 'Vitória/ES', 'Manaus/AM', 'Natal/RN'];
-    const products = ['Plano Premium', 'Plano Básico'];
-    const times = ['agora mesmo', 'há 2 minutos', 'há 5 minutos', 'há 8 minutos', 'há 12 minutos', 'há 15 minutos'];
-    const emojis = ['🏀', '🔥', '✅', '⚡', '🎉'];
-
-    // Create container dynamically
-    const container = document.createElement('div');
-    container.className = 'social-proof-container';
-    document.body.appendChild(container);
-
-    function showNotification() {
-      container.innerHTML = ''; // Clear previous
-
-      const name = firstNames[Math.floor(Math.random() * firstNames.length)];
-      const city = cities[Math.floor(Math.random() * cities.length)];
-      const product = products[Math.random() > 0.35 ? 0 : 1]; // ~65% buy Premium
-      const time = times[Math.floor(Math.random() * times.length)];
-      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-
-      const toast = document.createElement('div');
-      toast.className = 'social-proof-toast';
-      toast.innerHTML = `
-        <div class="toast-icon">${emoji}</div>
-        <div class="toast-content">
-          <p class="toast-title"><strong>${name}</strong> (${city})</p>
-          <p class="toast-body">Adquiriu o <strong>${product}</strong></p>
-          <span class="toast-time">${time}</span>
-        </div>
-      `;
-
-      container.appendChild(toast);
-
-      // Slide in
-      setTimeout(() => {
-        toast.classList.add('show');
-      }, 100);
-
-      // Slide out and remove toast after 5 seconds
-      setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => {
-          toast.remove();
-        }, 500);
-      }, 5000);
-    }
-
-    // Run first notification after 6 seconds, then repeat with random delays
-    setTimeout(showNotification, 6000);
-    
-    function triggerNext() {
-      const delay = 18000 + Math.random() * 12000; // Between 18s and 30s
-      setTimeout(() => {
-        showNotification();
-        triggerNext();
-      }, delay);
-    }
-    triggerNext();
-
-    // Testimonials scroll dots active state sync
-    const scrollContainer = document.querySelector('.testimonials-scroll-container');
-    const dots = document.querySelectorAll('.scroll-indicator-dots .dot');
-
-    if (scrollContainer && dots.length > 0) {
-      scrollContainer.addEventListener('scroll', () => {
-        const scrollLeft = scrollContainer.scrollLeft;
-        const card = scrollContainer.querySelector('.testimonial-img-card');
-        if (!card) return;
-        const cardWidth = card.offsetWidth + 24; // width + gap (1.5rem = 24px)
-        const activeIndex = Math.round(scrollLeft / cardWidth);
-        
-        dots.forEach((dot, idx) => {
-          if (idx === activeIndex) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
-        });
-      });
-    }
-  </script>
+  <!-- App Main Logic -->
+  <script src="js/members.js"></script>
 </body>
 </html>
